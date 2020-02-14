@@ -1,16 +1,16 @@
 package codeforGPAconverter;
-import java.util.Scanner;
+import java.util.Scanner; //import Scanner
 
 public class codeforGPAconverter {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		double numberGrade= 0.0;
-		double plusConvertion = numberGrade + 0.3;
-		double minusConvertion = numberGrade - 0.3;
+		double numberGrade= 0.0; //must give argument 
+		double plusConvertion = numberGrade + 0.3; //conversion for any letterGrade with + 
+		double minusConvertion = numberGrade - 0.3; //conversion for any letterGrade with -
 
 		int exitPlease = 1; 
-		while(exitPlease != 0) {
+		while(exitPlease != 0) { //while loop
 
 			System.out.print("Please Enter your letter grade:" );
 			String letterGrade= in.next(); 
@@ -66,13 +66,13 @@ public class codeforGPAconverter {
 				break;
 			case "Q":
 				System.out.print("Program Closed.");
-				exitPlease = 0;
+				exitPlease = 0; //closed while loop
 				break;
 			default: 
 				System.out.println("Incorrect Input");
 				break;
 			}
 		}
-		in.close();
+		in.close(); //must close Scanner
 	}
 }
