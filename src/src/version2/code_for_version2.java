@@ -1,12 +1,9 @@
-package gpacalc;
 import java.util.Scanner;
 
-public class GPACALC {
+public class version2GPAcalculator {
 	public static void main(String[] args) {
-
-
 		Scanner in = new Scanner(System.in); //declare Scanner
-		//in.useDelimiter("\n");
+		in.useDelimiter("\r\n");
 
 		String transcript = "Course\tCredits\tGrade\tGradePoint\nName\tHours\n";
 		double GPA = 0.0;
@@ -26,7 +23,6 @@ public class GPACALC {
 			if(courseName.equalsIgnoreCase("end")) {
 				break; //once entered all classes, transcript will print
 			}
-			System.out.print(courseName);
 			System.out.print("Enter Credit Hours: ");
 
 			creditHours = in.nextInt();
