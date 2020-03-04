@@ -1,11 +1,12 @@
-package version2;
-import java.util.Scanner; //import scanner
-public class code_for_version2 {
+package gpacalc;
+import java.util.Scanner;
 
+public class GPACALC {
 	public static void main(String[] args) {
 
 
 		Scanner in = new Scanner(System.in); //declare Scanner
+		//in.useDelimiter("\n");
 
 		String transcript = "Course\tCredits\tGrade\tGradePoint\nName\tHours\n";
 		double GPA = 0.0;
@@ -25,6 +26,7 @@ public class code_for_version2 {
 			if(courseName.equalsIgnoreCase("end")) {
 				break; //once entered all classes, transcript will print
 			}
+			System.out.print(courseName);
 			System.out.print("Enter Credit Hours: ");
 
 			creditHours = in.nextInt();
@@ -37,7 +39,8 @@ public class code_for_version2 {
 				double totalGrade = numberGrade+plusConvertion;
 				break;
 			case "A":
-				numberGrade = 4;
+				numberGrade=4; 
+				totalGrade = 4;
 				break;
 			case "A-":
 				numberGrade = 4;
@@ -49,6 +52,7 @@ public class code_for_version2 {
 				break;
 			case "B":
 				numberGrade = 3;
+				totalGrade = 3;
 				break;
 			case "B-":
 				numberGrade = 3;
@@ -59,7 +63,8 @@ public class code_for_version2 {
 				totalGrade = numberGrade+plusConvertion;
 				break;
 			case "C":
-				numberGrade = 2;
+				numberGrade= 2;
+				totalGrade = 2;
 				break;
 			case "C-":
 				numberGrade = 2;
@@ -70,7 +75,8 @@ public class code_for_version2 {
 				totalGrade = numberGrade+plusConvertion;
 				break;
 			case "D":
-				numberGrade = 1;
+				numberGrade= 1;
+				totalGrade = 1;
 				break;
 			case "D-":
 				numberGrade = 1;
