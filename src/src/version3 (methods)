@@ -7,7 +7,6 @@ public class GpaCalcConvertorVersion3 {
 		double plusConvertion = numberGrade + 0.3; //conversion for any letterGrade with + 
 		double minusConvertion = numberGrade - 0.3; //conversion for any letterGrade with -
 		double totalGrade= 0.0;
-		System.out.println(letterGradeEarned);
 		switch (letterGradeEarned) { 
 		case "A+": 
 			numberGrade = 4;
@@ -64,12 +63,14 @@ public class GpaCalcConvertorVersion3 {
 			System.out.println("Incorrect Input");
 			break;
 		}
-		System.out.print(totalGrade);
 		return totalGrade;
 	}
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
+		in.useDelimiter("\r\n");
+		double GPA = 0.0;
+		String transcript = "Course\tCredits\tGrade\tGradePoint\nName\tHours\n";
 		int exitPlease = 1; 
 		while(exitPlease != 0) {
 			String courseName= "";
@@ -78,27 +79,26 @@ public class GpaCalcConvertorVersion3 {
 			double gradePoints = 0.0 ;
 			double totalCreditHours = 0.0;
 			double totalGradePoints = 0.0;
-			String transcript = "Course\tCredits\tGrade\tGradePoint\nName\tHours\n";
-			double GPA = 0.0;
-
+			
 			System.out.print("Enter Course Name: ");
 			courseName = in.next();
-			if (courseName.equals("0")) {
-				break;
+			if (courseName.equals("end")) {
+				exitPlease = 0;
 			}
 			else {
 				System.out.print("Enter Credit Hours: ");
 				creditHours = in.nextInt();
 				totalCreditHours = creditHours + totalCreditHours;
 				System.out.print("Enter letter grade earned: ");
-				double numberConversion = convertGrade(in.next());
+				letterGrade = in.next();
+				double numberConversion = convertGrade(letterGrade);
 				gradePoints = numberConversion*creditHours;
 				totalGradePoints = gradePoints + totalGradePoints;
 				GPA = totalGradePoints / totalCreditHours;
 				transcript = transcript + "\n" + courseName + "\t" + creditHours + "\t " + letterGrade + "\t"+ gradePoints + "\n";
 			}
-			System.out.println(transcript + "\n" + "GPA:" + GPA);
 		}
+		System.out.println(transcript + "\n" + "GPA:" + GPA);
 		in.close();
 	}
 }
